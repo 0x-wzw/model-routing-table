@@ -34,3 +34,12 @@ Only `model_routing_table/table.py` needs editing to update the 10-D council. Al
 ## Model Scanner
 
 Weekly cron at `k2-backbone/scripts/model-scanner.py` scans Ollama Cloud for new models and auto-updates this table when successors are detected.
+---
+
+## Related Repositories
+
+| Repository | Purpose |
+|------------|---------|
+| [**agentic-workforce**](https://github.com/0x-wzw/agentic-workforce) | Multi-agent orchestration protocols — message envelopes, boundary enforcement, convergence detection, resolver system |
+| [k2-backbone](https://github.com/0x-wzw/k2-backbone) | Task decomposition and 10-D Council routing |
+| [neuroswarm](https://github.com/0x-wzw/neuroswarm) | Parallel swarm execution engine |
