@@ -190,23 +190,22 @@ TASK_TYPE_TO_MODEL = TASK_ROUTING
 # based on the role's cognitive requirements and budget.
 
 SWARM_ROLE_MAP = {
-    "october":      "deepseek-v4-flash:cloud",     # D7_general — fast, 1M ctx, orchestrator
-    "halloween":    "glm-5.1:cloud",               # D3_code — SWE-Bench 58.4%, architect
-    "octavia":      "nemotron-3-ultra:cloud",      # D8_verification — 550B, reviewer
-    "octane":       "qwen3.5:122b:cloud",          # D2_deep_reason — AIME 95.3%, QA
-    "octopus":      "deepseek-v4-flash:cloud",     # D7_general — fast deployer
-    "octoberxin":   "minimax-m3:cloud",            # D9_research — 1M ctx researcher
-    "bee":          "gemma4:26b:cloud",            # D6_analysis — cheap admin at $1.50
+    "october":      "deepseek-v4-flash:cloud",     # D7_general — fast, 1M ctx, orchestrator — VERIFIED
+    "halloween":    "glm-5.1:cloud",               # D3_code — SWE-Bench 58.4%, architect — VERIFIED
+    "octavia":      "nemotron-3-ultra:cloud",      # D8_verification — 550B, reviewer — VERIFIED
+    "octane":       "qwen3.5:cloud",               # D2_deep_reason — QA — VERIFIED
+    "octopus":      "deepseek-v4-flash:cloud",     # D7_general — fast deployer — VERIFIED
+    "octoberxin":   "minimax-m3:cloud",            # D9_research — 1M ctx researcher — VERIFIED
+    "bee":          "deepseek-v4-flash:cloud",     # D7_general ($0.60) — gemma4 unavailable on cloud API
 }
 
 SWARM_COST_USD = {
     "deepseek-v4-flash:cloud":  0.60,
     "deepseek-v4-pro:cloud":    0.60,
-    "gemma4:26b:cloud":         1.50,
     "glm-5.1:cloud":            5.00,
     "minimax-m3:cloud":         2.50,
     "nemotron-3-ultra:cloud":   1.20,
-    "qwen3.5:122b:cloud":       4.00,
+    "qwen3.5:cloud":            1.50,
 }
 
 SWARM_ROLE_DESCRIPTIONS = {
@@ -216,7 +215,7 @@ SWARM_ROLE_DESCRIPTIONS = {
     "octane":       "QA engineer — deep edge case & boundary testing",
     "octopus":      "Deployer — execution & release management",
     "octoberxin":   "Researcher — deep research & contrarian analysis",
-    "bee":          "Admin worker — stateless cleanup & formatting",
+    "bee":          "Admin worker — stateless cleanup & formatting (falls back to D7)",
 }
 
 SWARM_TO_DIMENSION = {
