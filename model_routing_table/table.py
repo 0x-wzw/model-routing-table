@@ -184,3 +184,47 @@ DIMENSION_MAP_V2 = DIMENSION_MAP
 DIMENSION_FALLBACK_V2 = DIMENSION_FALLBACK
 OLLAMA_CLOUD_MODELS = list(MODEL_COST_USD.keys())
 TASK_TYPE_TO_MODEL = TASK_ROUTING
+# ── October Swarm Role → Model Assignment ──────────────────────────
+#
+# Maps each swarm agent role to its optimal Ollama Cloud model
+# based on the role's cognitive requirements and budget.
+
+SWARM_ROLE_MAP = {
+    "october":      "deepseek-v4-flash:cloud",     # D7_general — fast, 1M ctx, orchestrator
+    "halloween":    "glm-5.1:cloud",               # D3_code — SWE-Bench 58.4%, architect
+    "octavia":      "nemotron-3-ultra:cloud",      # D8_verification — 550B, reviewer
+    "octane":       "qwen3.5:122b:cloud",          # D2_deep_reason — AIME 95.3%, QA
+    "octopus":      "deepseek-v4-flash:cloud",     # D7_general — fast deployer
+    "octoberxin":   "minimax-m3:cloud",            # D9_research — 1M ctx researcher
+    "bee":          "gemma4:26b:cloud",            # D6_analysis — cheap admin at $1.50
+}
+
+SWARM_COST_USD = {
+    "deepseek-v4-flash:cloud":  0.60,
+    "deepseek-v4-pro:cloud":    0.60,
+    "gemma4:26b:cloud":         1.50,
+    "glm-5.1:cloud":            5.00,
+    "minimax-m3:cloud":         2.50,
+    "nemotron-3-ultra:cloud":   1.20,
+    "qwen3.5:122b:cloud":       4.00,
+}
+
+SWARM_ROLE_DESCRIPTIONS = {
+    "october":      "Orchestrator & synthesis (same as D7_general)",
+    "halloween":    "Code architect — system design & implementation",
+    "octavia":      "Code reviewer — verification & accuracy gate",
+    "octane":       "QA engineer — deep edge case & boundary testing",
+    "octopus":      "Deployer — execution & release management",
+    "octoberxin":   "Researcher — deep research & contrarian analysis",
+    "bee":          "Admin worker — stateless cleanup & formatting",
+}
+
+SWARM_TO_DIMENSION = {
+    "october":    "D7_general",
+    "halloween":  "D3_code",
+    "octavia":    "D8_verification",
+    "octane":     "D2_deep_reason",
+    "octopus":    "D7_general",
+    "octoberxin": "D9_research",
+    "bee":        "D6_analysis",
+}
