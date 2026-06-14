@@ -4,7 +4,7 @@ Single source of truth for K2 Swarm model routing.
 
 **10-D Council assignments, cost tables, capability matrices, and fallback chains.**
 
-All model changes go here. Downstream repos (`k2-backbone`, `neuroswarm`, OpenClaw plugin) import from this package.
+All model changes go here. Downstream repos (`k2-backbone`, `neuroswarm`, Hermes Agent skill) import from this package.
 
 ## Quick Start
 

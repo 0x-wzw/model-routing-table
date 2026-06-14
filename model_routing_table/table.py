@@ -4,7 +4,7 @@ Model Routing Table — Single Source of Truth for K2 Swarm Model Assignments
 This is the central model routing table used across the K2 ecosystem:
 - k2-backbone (NecroSwarm router, Council router)
 - neuroswarm (Council deliberation, refusal routing)
-- OpenClaw plugin (k2_route tool)
+- Hermes Agent skill (k2_route tool)
 
 All model changes go HERE. Downstream repos import from this package.
 
